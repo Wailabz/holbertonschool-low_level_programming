@@ -14,6 +14,7 @@ int letter;
 
 for (letter = 0; str[letter] != '\0'; letter++)
 
+letter++;
 
 for (letter /= 2; str[letter] != '\0'; letter++)
 {
