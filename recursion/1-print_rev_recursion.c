@@ -5,11 +5,9 @@
  *
  * Return : 0
  */
-void _puts_recursion(char *s);
-int string_length(char *s)
+void _print_rev_recursion(char *s)
 {
-int c = 0;
-while(*&s[c] != '\0')
-c++;
-return c;
+if (*s != '\0')
+_print_rev_recursion(s+1);
+_putchar(*s);
 }
