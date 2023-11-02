@@ -14,8 +14,9 @@ return (0);
 }
 else
 {
-int i = _strlen_recursion(s + 1);
-i++;
-return (i);
+ return (1 + _strlen_recursion(s + 1));
 }
+
+/*return ((*s != '\0') ? (1 + _strlen_recursion(s + 1)) : (0));*/
+
 }
