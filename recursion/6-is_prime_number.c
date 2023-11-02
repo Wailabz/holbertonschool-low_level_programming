@@ -14,6 +14,11 @@ if ((n % x) == 0)
 return (0);
 return (is_prime_runtime(n, x + 1));
 }
+/**
+ * is_prime_number - function
+ * @n: int
+ * Return: int
+ */
 int is_prime_number(int n)
 {
 if (n < 2)
