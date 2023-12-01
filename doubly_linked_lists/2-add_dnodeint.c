@@ -1,45 +1,37 @@
+#include <stdio.h>
 #include "lists.h"
-
 /**
- * add_dnodeint_new - function
- * @n: const int
- *
- * Return: dlistint_t ptr
+* add_dnodeint - Adds a new node at the beginning of a dlistint_t list.
+* @head: pointer to the list_t list.
+* @n: integer to add to the list.
+* Return: the address of the new element, or NULL if it failed.
 */
-dlistint_t	*add_dnodeint_new(const int n)
+/* Fonction qui prend en param double pointeur vers struc + string */
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t	*r;
+    /* Déclaration d'un pointeur vers une structure */
+	dlistint_t *new;
 
-	r = (dlistint_t *) malloc(sizeof(dlistint_t));
-	if (r == 0)
-		return (0);
-	r->n = n;
-	return (r);
-}
+    /* Allocation de mémoire pour le pointeur vers la structure */
+	new = malloc(sizeof(dlistint_t));
+    /* Si l'allocation de mémoire échoue, retourne NULL */
+	if (new == NULL)
+		return (NULL);
 
-/**
- * add_dnodeint - function
- * @head: dlistint_t ptr ptr
- * @n: const int
- *
- * Return: dlistint_t ptr
-*/
-dlistint_t	*add_dnodeint(dlistint_t **head, const int n)
-{
-	dlistint_t	*r;
+    /* Affectation de la valeur du paramètre n au membre n de la structure */
+	new->n = n;
+    /* Affectation de la valeur de head au membre next de la structure */
+	new->next = *head;
+    /* Affectation de la valeur NULL au membre prev de la structure */
+	new->prev = NULL;
 
-	if (head == 0)
-		return (0);
-	r = add_dnodeint_new(n);
-	if (r == 0)
-		return (0);
-	if (*head == 0)
-		*head = r;
-	else
-	{
-		r->next = *head;
-		(*head)->prev = r;
-		*head = r;
-	}
-	return (r);
+    /* Si la valeur de head est différente de NULL */
+	if (*head != NULL)
+    /* Affectation de la valeur de new au membre prev de la structure */
+		(*head)->prev = new;
+    /* Affectation de la valeur de new au membre head de la structure */
+	*head = new;
+
+    /* Retourne la valeur de new */
+	return (new);
 }
