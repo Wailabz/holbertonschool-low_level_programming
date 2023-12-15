@@ -1,24 +1,24 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * print_chessboard - print's a chessboard
- * @a: array to be printed
- *
- * Return: void
+ * leet - entry point
+ * @s: pointer
+ * Description: function that encodes a string into 1337.
+ * Return: convert string if success
  */
-
-void print_chessboard(char (*a)[8])
+char *leet(char *s)
 {
-	int i = 0;
+	int i, j;
+	char a[] = "aAeEoOtTlL";
+	char b[] = "4433007711";
 
-	for (; i < 8; i++)
+	for (i = 0; *(s + i); i++)
 	{
-		int j = 0;
-
-		for (; j < 8; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			_putchar(a[i][j]);
+			if (a[j] == s[i])
+				s[i] = b[j];
 		}
-		_putchar('\n');
 	}
+	return (s);
 }
