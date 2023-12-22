@@ -21,4 +21,4 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	return ('\0');
-sh: 1: q: not found
+}
