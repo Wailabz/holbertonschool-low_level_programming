@@ -2,6 +2,8 @@
 #define MAIN_H
 #include <unistd.h>
 
+char *_strcpy(char *dest, char *src);
+
 /*_putchar.c*/
 int _putchar(char c);
 
