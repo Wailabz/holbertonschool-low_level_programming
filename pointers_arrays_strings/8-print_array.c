@@ -20,4 +20,4 @@ void print_diagsums(int *a, int size)
 		j++;
 	}
 	printf("%d, %d\n", sum_1, sum_2);
-}
+/bin/bash: line 1: q: command not found
