@@ -1,16 +1,28 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+#include <string.h>
 
 /**
- * puts2 - entry point*
- * @str: pointer to an string
- * Description: function that prints every other character of a string.
- * Return: nothing
+ * puts_half - prints half of a string
+ * @str: variable
  */
 
 void puts_half(char *str)
-{
-	for (int i = 0; str[i] <= 9; i++)
 
-	putchar(str[i]);
+{
+	int length = strlen(str);
+	int start_index = length / 2;
+	int i;
+
+	if (length % 2 != 0)
+	{
+		start_index = (length + 1) / 2;
+	}
+
+	for (i = start_index; i < length; i++)
+	{
+		_putchar(str[i]);
+	}
+
+	_putchar('\n');
 }
