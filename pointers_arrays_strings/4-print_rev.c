@@ -1,20 +1,21 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 #include <string.h>
 
 /**
- * print_rev -  Prints a string in reverse
- * @s : is the string to reverse
- *retunrn doesn't exist
+ * print_rev - prints a string, in reverse
+ * @s: variable
  */
-
-
 
 void print_rev(char *s)
 {
-	int i = strlen(s);
+	int length = strlen(s);
+	char *end = s + length - 1;
 
-	while (i--)
-		_putchar(s[i]);
-	_putchar('\n');
+	while (end >= s)
+	{
+		_putchar(*end);
+		end--;
+	}
+	putchar('\n');
 }
